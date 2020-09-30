@@ -1,0 +1,39 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(112, 106, 106);
+    border-bottom: 10px solid  rgb(112, 106, 106);
+}
+
+h2,h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(112, 106, 106);
+}
+
+.highlight {
+    color: red;
+}
+
+.contents
+{
+    margin-left: 2em;
+}
+
+.contents ol {
+    margin-left: -1.6em;
+}
+
+/*p {
+    border: 1px solid blue;
+    padding: 1em 10px 15px 20px;
+    margin-left: 2em;
+}
+*/
+
+h2 {
+    /*border: 1px solid green;*/
+}
