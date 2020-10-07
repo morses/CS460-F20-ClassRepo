@@ -1,0 +1,9 @@
+
+.red {
+    color: red;
+}
+
+.bigText {
+    font: bold 36px sans-serif;
+    fill: white;
+}
