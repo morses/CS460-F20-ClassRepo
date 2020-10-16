@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Examples</title>
+    <style>
+        form {
+            border: 1px solid #bbb;
+            padding: 1em 0 1em 2em;
+        }
+        form ul {
+            list-style:none;
+        }
+        form li {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Examples</h1>
+    <p>A good place to start is: <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms">MDN Web forms -- Working with user data</a>.  These will be in their near simplest forms and unstyled except for a box to show the form.</p>
+    <p>You need to "run" these with a web server rather than loading the file via file:// URI.  A good choice is to install Node.js via NPM and then install the simple "http-server" package:</p>
+    <pre>npm install http-server -g</pre>
+    <p>Run by cd'ing to this directory from the command line then run:</p>
+    <pre>http-server</pre>
+    <p>You can also just wait until we put this in an ASP.NET project.</p>
+
+    <h2>Simple Search Box &rarr; GET</h2>
+        <form action="/forms" method="get">
+            <input type="text" name="search">
+            <button type="submit">Search</button>
+        </form>
+
+    <h2>Multiple Input Elements to Retrieve Something &rarr; GET</h2>
+    <p>Do a tiny bit of layout with a list; recall input elements layout <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements">inline</a> not block. </p>
+    <form action="/forms" method="get">
+        <ul>
+            <li>
+                <label>Name:
+                    <input type="text" name="name">
+                </label>
+            </li>
+            <li>
+                <label>Start Date:
+                    <input type="date" name="start_date">
+                </label>
+            </li>
+            <li>
+                <label>Ending Date:
+                    <input type="date" name="end date">  <!--!!!-->
+                </label>
+            </li>
+            <li>
+                <label for="c45">Count:</label>
+                <input type="number" id="c45" name="count" min="0" max="10">
+            </li>
+            <li><button type="submit">Search</button></li>
+        </ul>
+    </form>
+
+    <h2>Login Form (WRONG) &rarr; GET</h2>
+
+    <form action="/forms" method="get">
+        <label for="uname34">Username: </label>
+        <input type="text" name="username" id="uname34">
+        <label for="passwd34">Password: </label>
+        <input type="password" name="password" id="passwd34">
+        <button type="submit">Login to Super Important Site</button>
+    </form>
+
+    <h2>Login Form (Right) &rarr; POST</h2>
+
+    <form action="/forms" method="post">
+        <label for="uname34">Username: </label>
+        <input type="text" name="username" id="uname34">
+        <label for="passwd34">Password: </label>
+        <input type="password" name="password" id="passwd34">
+        <button type="submit">Login to Super Important Site</button>
+    </form>
+
+    <h2>Multiple Input Elements to Create/Modify Something &rarr; POST</h2>
+    <form action="/forms" method="post">
+        <ul>
+            <li>
+                <label>Name:
+                    <input type="text" name="name">
+                </label>
+            </li>
+            <li>
+                <label>Date:
+                    <input type="date" name="date">
+                </label>
+            </li>
+            <li>
+                <label for="c45">Count:</label>
+                <input type="number" id="c45" name="count" min="0" max="10">
+            </li>
+            <li>
+                <label>Select a Markdown file:
+                    <input type="file" name="file" accept=".md">
+                </label>
+            </li>
+            
+            <li><button type="submit">Create</button></li>
+        </ul>
+    </form>
+</body>
+</html>
