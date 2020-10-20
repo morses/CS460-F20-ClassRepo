@@ -1,0 +1,37 @@
+@model Account
+
+<h3>Multiple Input Elements to Retrieve Something &rarr; GET</h3>
+<p>Do a tiny bit of layout with a list; recall input elements layout <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements">inline</a> not block. </p>
+<form asp-controller="DateValue" asp-action="Example" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label>Name:
+            <input asp-for="Name" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Start Date:
+            <input asp-for="StartDate" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Ending Date:
+            <input asp-for="EndDate" class="form-control">  <!--!!!-->
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="c45">Count:</label>
+        <input id="c45" asp-for="Count" class="form-control">
+    </div>   
+    <button type="submit" class="btn btn-outline-success">Search</button>
+</form>
+
+@if(Model.CountList != null)
+{
+    <ul>
+        @foreach(int i in Model.CountList)
+        {
+            <li>@i</li>
+        }
+    </ul>
+}

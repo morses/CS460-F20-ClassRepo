@@ -1,0 +1,15 @@
+@model string
+@*Here is a Razor comment*@
+
+<h3>Simple Search Box &rarr; GET</h3>
+<form asp-controller="Home" asp-action="Search" method="get">
+    <div class="form-group">
+        <input type="text" name="search" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+@if(Model != null)
+{
+    <p>Thank you for searching for: @Model </p>
+}

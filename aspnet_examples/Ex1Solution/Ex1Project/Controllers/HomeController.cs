@@ -24,6 +24,14 @@ namespace Ex1Project.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Search(string search)
+        {
+            Debug.WriteLine("Inside of Search action method.");
+            Debug.WriteLine("search = " + search);
+            return View("Search",search);
+        }
+
         public IActionResult Privacy()
         {
             Debug.WriteLine("Inside of Privacy action method.");
