@@ -20,12 +20,19 @@ namespace Ex1Project.Controllers
 
         public IActionResult Index()
         {
+            Debug.WriteLine("Inside of Index action method.");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            Debug.WriteLine("Inside of Privacy action method.");
             return View();
+        }
+
+        public string HelloWorld()
+        {
+            return "Hello World";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
