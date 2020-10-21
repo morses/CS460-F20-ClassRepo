@@ -16,7 +16,7 @@
         <h2>Here is the list of people attending the party</h2>
         <table class="table table-bordered table-striped table-sm">
             <thead>
-                <tr><th>Name</th><th>Email</th><th>Phone</th></tr>
+                <tr><th>Name</th><th>Email</th><th>Phone</th><th># of Guests</th></tr>
             </thead>
             <tbody>
                 @foreach (PartyInvites.Models.GuestResponse r in Model) {
@@ -24,6 +24,7 @@
                         <td>@r.Name</td>
                         <td>@r.Email</td>
                         <td>@r.Phone</td>
+                        <td>@r.Guests</td>
                     </tr>
                 }
             </tbody>
