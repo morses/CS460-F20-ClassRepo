@@ -2,7 +2,7 @@
 
 namespace PartyInvites.Models {
 
-    public class GuestResponse {
+    public class GuestResponse_old {
 
         [Required(ErrorMessage = "Please enter your name")]
         [StringLength(50)]

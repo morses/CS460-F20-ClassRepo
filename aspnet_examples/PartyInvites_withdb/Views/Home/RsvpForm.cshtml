@@ -1,4 +1,4 @@
-﻿@model PartyInvites.Models.GuestResponse
+﻿@model PartyInvites.Models.GuestResponses
 @{
     Layout = null;
 }
@@ -20,8 +20,8 @@
     <form asp-action="RsvpForm" method="post" class="m-2">
         <div asp-validation-summary="All"></div>
         <div class="form-group">
-            <label asp-for="Name">Your name:</label>
-            <input asp-for="Name" class="form-control" />
+            <label asp-for="FullName">Your name:</label>
+            <input asp-for="FullName" class="form-control" />
         </div>
         <div class="form-group">
             <label asp-for="Email">Your email:</label>

@@ -5,5 +5,6 @@ CREATE TABLE GuestResponses
     Email           NVARCHAR(50)        NOT NULL,
     Phone           NVARCHAR(50)        NOT NULL,
     WillAttend      BOOLEAN,
-	TimeSubmitted	DATETIME			NOT NULL
+	--TimeSubmitted	DATETIME			NOT NULL
+    Guests          INTEGER
 );

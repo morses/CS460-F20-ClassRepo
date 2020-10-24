@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PartyInvites.Models.GuestResponse>
+﻿@model IEnumerable<PartyInvites.Models.GuestResponses>
 @{
     Layout = null;
 }
@@ -19,9 +19,9 @@
                 <tr><th>Name</th><th>Email</th><th>Phone</th><th># of Guests</th></tr>
             </thead>
             <tbody>
-                @foreach (PartyInvites.Models.GuestResponse r in Model) {
+                @foreach (PartyInvites.Models.GuestResponses r in Model) {
                     <tr>
-                        <td>@r.Name</td>
+                        <td>@r.FullName</td>
                         <td>@r.Email</td>
                         <td>@r.Phone</td>
                         <td>@r.Guests</td>
