@@ -1,0 +1,1 @@
+﻿-- script to create all tables and setup our complete data model

@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Report an Asian Hornet Sighting";
+}
+
+<div class="text-center">
+    <a href="~/images/AsianHornet_wide.jpg"><img src="~/images/AsianHornet_wide.jpg" class="img-fluid rounded" alt="Image of Asian Hornet, aka Murder Hornet" /></a>
+    <h1 class="display-4">Have you seen one of these?</h1>
+    <p class="lead">If so, please report it here</p>
+</div>
+<div class="row">
+    <div class="col">
+        <form asp-controller="Hornets" asp-action="Sighting" method="post" class="m-2">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="FullName">Your name:</label>
+                        <input id="FullName" name="FullName" class="form-control" placeholder="Concerned Q. Citizen" />
+                        <!--span asp-validation-for=""></span-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Phone">Phone:</label>
+                        <input id="Phone" name="Phone" class="form-control" placeholder="503-838-8480" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Latitude">Latitude:</label>
+                        <input id="Latitude" name="Latitude" class="form-control" placeholder="44.852224" />
+                        <!--span asp-validation-for=""></span-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Longitude">Longitude:</label>
+                        <input id="Longitude" name="Longitude" class="form-control" placeholder="-123.236544" />
+                        <!--span asp-validation-for=""></span-->
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="SightingTime">When did you see it?</label>
+                        <input id="SightingTime" name="SightingTime" class="form-control" placeholder="2020-10-27 09:40:00" />
+                        <!--span asp-validation-for=""></span-->
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="Description">How do you know it was a &ldquo;Murder Hornet&rdquo;?  Or is there anything else you'd like us to know about this sighting?</label>
+                        <textarea id="Description" name="Description" rows="6" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Report Sighting</button>
+        </form>
+    </div>
+</div>
