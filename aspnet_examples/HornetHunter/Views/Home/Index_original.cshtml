@@ -1,5 +1,4 @@
-﻿@model Sighting
-@{
+﻿@{
     ViewData["Title"] = "Report an Asian Hornet Sighting";
 }
 
@@ -15,31 +14,30 @@
             <div class="form-row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="FullName">Your name:</label>
-                        <input asp-for="FullName" class="form-control" placeholder="Concerned Q. Citizen" />
-                        
+                        <label for="FullName">Your name:</label>
+                        <input id="FullName" name="FullName" class="form-control" placeholder="Concerned Q. Citizen" />
+                        <!--span asp-validation-for=""></span-->
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Phone">Phone:</label>
-                        <input asp-for="Phone" class="form-control" placeholder="503-838-8480" />
-                        <span asp-validation-for="Phone"></span>
+                        <label for="Phone">Phone:</label>
+                        <input id="Phone" name="Phone" class="form-control" placeholder="503-838-8480" />
                     </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Latitude">Latitude:</label>
-                        <input asp-for="Latitude" class="form-control" placeholder="44.852224" />
+                        <label for="Latitude">Latitude:</label>
+                        <input id="Latitude" name="Latitude" class="form-control" placeholder="44.852224" />
                         <!--span asp-validation-for=""></span-->
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Longitude">Longitude:</label>
-                        <input asp-for="Longitude" class="form-control" placeholder="-123.236544" />
+                        <label for="Longitude">Longitude:</label>
+                        <input id="Longitude" name="Longitude" class="form-control" placeholder="-123.236544" />
                         <!--span asp-validation-for=""></span-->
                     </div>
                 </div>
@@ -47,8 +45,8 @@
             <div class="form-row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label asp-for="SightingTime">When did you see it?</label>
-                        <input asp-for="SightingTime" class="form-control" placeholder="2020-10-27 09:40:00" />
+                        <label for="SightingTime">When did you see it?</label>
+                        <input id="SightingTime" name="SightingTime" class="form-control" placeholder="2020-10-27 09:40:00" />
                         <!--span asp-validation-for=""></span-->
                     </div>
                 </div>
@@ -56,8 +54,8 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <label asp-for="Description">How do you know it was a &ldquo;Murder Hornet&rdquo;?  Or is there anything else you'd like us to know about this sighting?</label>
-                        <textarea asp-for="Description" rows="6" class="form-control"></textarea>
+                        <label for="Description">How do you know it was a &ldquo;Murder Hornet&rdquo;?  Or is there anything else you'd like us to know about this sighting?</label>
+                        <textarea id="Description" name="Description" rows="6" class="form-control"></textarea>
                     </div>
                 </div>
             </div>

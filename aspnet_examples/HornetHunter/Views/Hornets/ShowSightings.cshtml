@@ -1,0 +1,15 @@
+﻿@model IEnumerable<HornetHunter.Models.Sighting>
+
+    <h1 class="display-4">Recent Sightings</h1>
+    <hr />
+    <table class="table">
+        @foreach(Sighting s in Model)
+        {
+        <tr>
+            <td>@s.SightingTime.ToString()</td>
+            <td>@s.Latitude</td>
+            <td>@s.Longitude</td>
+            <td>@s.Description</td>
+        </tr>
+        }
+    </table>

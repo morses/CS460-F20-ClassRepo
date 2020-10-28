@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HornetHunter.Models.Sighting>
+
+@{
+    ViewData["Title"] = "Show Sightings on a Map";
+    // format the list of sightings into a form we can use in javascript below.  Do it up here since this is all C#
+    // using some LINQ voodoo
+    var locationList = Model.Select(s => $"{{ latitude:{s.Latitude}, longitude:{s.Longitude} }}");
+    var locationListJSString = String.Join(',', locationList);
+}
+
+<h1 class="display-4">Recent Sightings</h1>
+<hr />
+<p>Make sure you have sightings in your database (with realistic Lat/Lon) to be able to see them on this map.</p>
+@*The div where the map will be rendered by Bing*@
+<div id="myMap" style="width: 80vw; height: 80vh;"></div>
+
+@*Basic code from Bing Maps API to display pins on a map*@
+<script type='text/javascript'>
+    // Array of locations to add to map, need to generate these from code.  So we write Javascript using Razor!
+    // Not the best way, which would be to use AJAX to get this data from the server directly
+    //const sightings = [{ latitude: 44.854395, longitude: -123.277600 }, { latitude: 44.892593, longitude: -123.178723 }];
+    const sightings = [@locationListJSString];
+
+    function loadMap() {
+        // Create map
+        let map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+        // center map on Monmouth
+        center: new Microsoft.Maps.Location(44.848526, -123.229295)
+        });
+        // Create a layer to add items to
+        let layer = new Microsoft.Maps.Layer();
+        // Iterate over lat/lon points and add pushpins to the layer
+        sightings.forEach(function (loc) {
+            let pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(loc.latitude, loc.longitude));
+            layer.add(pushpin);
+        });
+        // Add layer to map
+        map.layers.insert(layer);
+    }
+</script>
+
+@*Puts this script element in the shared layout section called "Scripts".  That puts it at the bottom of the body.
+    This URL include a key for Bing Maps API.  You just need to log in/register and request a free key.  I will invalidate this key after a while as you really do not ever want to put keys in a repository.*@
+@section Scripts {
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Aqf6EzM0W1QOfoeX60oo9UfkITDDH-r9XvGQFj-Uzk5v1c1A3OTOXwHNex9pis7b&callback=loadMap' async defer></script>
+}
