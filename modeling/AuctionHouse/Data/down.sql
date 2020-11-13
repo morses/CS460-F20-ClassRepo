@@ -1,0 +1,9 @@
+﻿ALTER TABLE [Bid] DROP CONSTRAINT [Bid_Fk_Item];
+ALTER TABLE [Bid] DROP CONSTRAINT [Bid_Fk_Buyer];
+ALTER TABLE [Item] DROP CONSTRAINT [Item_Fk_Seller];
+GO
+
+DROP TABLE [Bid];
+DROP TABLE [Item];
+DROP TABLE [Seller];
+DROP TABLE [Buyer];
