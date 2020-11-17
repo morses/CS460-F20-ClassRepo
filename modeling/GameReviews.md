@@ -23,13 +23,15 @@ Later, after more conversations we've developed a prioritized list of requiremen
 
 ## Way too complex for right now: let's simplify
 
-1. 
-2. 
-3. 
-4. 
+1. As an administrator I want to be able to add a new game into the system so that it will be ready for reviews, ratings, etc. 
+2. As a visitor to the site I want to search for a game by title so I can learn about the game.
+3. As an administrator I want to characterize a game with a label (such as "first person shooter", "MMO", "strategy" or "rogue-like") so that users will be able to browse, search, or otherwise view games by types.
+4. As a reviewer I want to be able to review a game so that others can learn somethings about the game and perhaps decide whether or not to buy it.
+5. As a visitor to the site I want to be able to read details about a game so I can learn about it.
 
 ## Requirements Elicitation
-
+1. A game:
+    Title, equivalent of ISBN, Steam ID if there, maturity rating, publisher, type of game, platforms, cover art, ...
 ## Requirements Analysis
 
 ## Initial Modeling: model a solution that supports the requirements
