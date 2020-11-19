@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AuctionHouse.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,9 +25,17 @@ namespace AuctionHouse
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Changes made during the video on deploying and using a SQL Server database in Azure
+            // Store the connection string in appsettings.json (but take out the password part)
+            // then build it here and add in the password which we store in user-secrets
+            var builder = new SqlConnectionStringBuilder(Configuration.GetConnectionString("AuctionHouseConnectionAzure"));
+            builder.Password = Configuration["AuctionHouse:DBPassword"];
+
             services.AddControllersWithViews();
             services.AddDbContext<AuctionHouseDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("AuctionHouseConnection")));
+                //options.UseSqlServer(Configuration.GetConnectionString("AuctionHouseConnection"))
+                options.UseSqlServer(builder.ConnectionString)      // switch back and forth here between a local db and cloud db
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
