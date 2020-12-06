@@ -22,3 +22,4 @@ Other changes made to this project from the default template:
 - modify Controllers/HomeController.cs to remove Privacy action method
 - modify wwwroot/js/site.js to add some starting JavaScript code
 - add this Readme.txt file
+- modify appsettings.json to add 2 connection strings
