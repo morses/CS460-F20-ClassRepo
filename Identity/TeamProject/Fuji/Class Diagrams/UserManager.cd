@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Fuji.Areas.Identity.Pages.Account.LoginModel">
+    <Position X="6" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Fuji.Areas.Identity.Pages.Account.LoginModel.InputModel">
+        <TypeIdentifier>
+          <NewMemberFileName>Areas\Identity\Pages\Account\Login.cshtml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="_userManager" Type="Microsoft.AspNetCore.Identity.UserManager&lt;TUser&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="1.059" />
+        <Point X="10.562" Y="1.059" />
+        <Point X="10.562" Y="2" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_signInManager" Type="Microsoft.AspNetCore.Identity.SignInManager&lt;TUser&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="1.245" />
+        <Point X="3.25" Y="1.245" />
+        <Point X="3.25" Y="2.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAABAAAAAAAAAAgAABAAAAAMAAAAQAAAAIEAAAAAAA=</HashCode>
+      <FileName>Areas\Identity\Pages\Account\Login.cshtml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_userManager" />
+      <Field Name="_signInManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.UserManager&lt;TUser&gt;">
+    <Position X="9.25" Y="2" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.SignInManager&lt;TUser&gt;">
+    <Position X="1.75" Y="2.25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

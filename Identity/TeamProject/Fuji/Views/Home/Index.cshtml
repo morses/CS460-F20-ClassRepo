@@ -1,0 +1,31 @@
+﻿@model MainPageVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="col">
+    <p>@ViewBag.Message</p>
+</div>
+
+@if (Model.TheIdentityUser != null && Model.TheFujiUser != null)
+{
+    <div class="row">
+        <div class="col">
+            <h2>How many Apples have you eaten today @Model.TheFujiUser.FirstName @Model.TheFujiUser.LastName ? </h2>
+            <p>Click on each apple to indicate you ate one today</p>
+            <div class="list-group" id="listOfApples">
+                @foreach (Apple a in Model.Apples)
+                {
+                    // We'll set up a javascript listener on these buttons to send an AJAX message to our controller
+                    var appleID = "a" + a.Id;
+                    <button type="button" id="@appleID" class="list-group-item list-group-item-action">@a.VarietyName (@a.ScientificName)</button>
+                }
+            </div>
+            <p id="appleTotals"></p>
+        </div>
+    </div>
+}

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Identity methods and properties available in a Controller">
+    <Position X="5.786" Y="1" Height="0.391" Width="3.544" />
+  </Comment>
+  <Class Name="Microsoft.AspNetCore.Mvc.Controller" Collapsed="true">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="1.3" />
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Mvc.ControllerBase" Collapsed="true">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Security.Claims.ClaimsPrincipal">
+    <Position X="8" Y="3.75" Width="2.25" />
+    <AssociationLine Name="Identity" Type="System.Security.Principal.IIdentity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="4.875" />
+        <Point X="12" Y="4.875" />
+        <Point X="12" Y="5.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Identity" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Fuji.Controllers.HomeController" Collapsed="true">
+    <Position X="3.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIAAAAQAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="System.Security.Principal.IIdentity">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
