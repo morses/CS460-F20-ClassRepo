@@ -37,6 +37,21 @@ namespace Fuji
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            // Customize some settings that Identity uses
+            services.Configure<IdentityOptions>(opts => {
+                // lines without comments are the default settings that we get by "AddDefault" above
+                opts.Password.RequireDigit = true;
+                opts.Password.RequireLowercase = true;
+                opts.Password.RequireNonAlphanumeric = false;   // default is true
+                opts.Password.RequireUppercase = true;
+                opts.Password.RequiredLength = 8;           // default is 6
+                opts.Password.RequiredUniqueChars = 5;      // default is 1
+                opts.SignIn.RequireConfirmedEmail = false;
+                opts.SignIn.RequireConfirmedPhoneNumber = false;
+                opts.User.AllowedUserNameCharacters =
+            "abcdefghijklmnopqrstuvwxyzBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";   // removed 'A'
+                opts.User.RequireUniqueEmail = true;        // default is false
+            });
             services.AddControllersWithViews();
             // Added to enable runtime compilation
             services.AddRazorPages().AddRazorRuntimeCompilation();

@@ -29,3 +29,13 @@
         </div>
     </div>
 }
+
+@*
+    Move our button listeners and ajax code to a separate javascript file that we
+    can load on this page only.  Site.js isn't the best location for it since that
+    is loaded on every page by default.
+*@
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/eatApples.js"></script>
+}
