@@ -49,7 +49,7 @@ namespace Fuji
                 opts.SignIn.RequireConfirmedEmail = false;
                 opts.SignIn.RequireConfirmedPhoneNumber = false;
                 opts.User.AllowedUserNameCharacters =
-            "abcdefghijklmnopqrstuvwxyzBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";   // removed 'A'
+            "abcdefghijklmnopqrstuvwxyzBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";   // removed letter 'A'
                 opts.User.RequireUniqueEmail = true;        // default is false
             });
             services.AddControllersWithViews();
