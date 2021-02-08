@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Fuji.Data;
 using Fuji.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fuji.Controllers
 {
+    //[Authorize(Roles ="admin")]
     public class FujiUsersController : Controller
     {
         private readonly FujiDbContext _context;
@@ -20,6 +22,7 @@ namespace Fuji.Controllers
         }
 
         // GET: FujiUsers
+        
         public async Task<IActionResult> Index()
         {
             return View(await _context.FujiUsers.ToListAsync());

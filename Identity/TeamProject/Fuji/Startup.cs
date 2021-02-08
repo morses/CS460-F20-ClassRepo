@@ -12,6 +12,7 @@ using Fuji.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fuji
 {
@@ -55,6 +56,17 @@ namespace Fuji
             services.AddControllersWithViews();
             // Added to enable runtime compilation
             services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            // Change the overriding authorization strategy from 
+            //     "allow unless explicitly authorized" (the default)
+            // to
+            //     "require authorization unless explicitly allowed for anyone"
+      /*      services.AddAuthorization(opts => {
+                opts.FallbackPolicy = new AuthorizationPolicyBuilder()
+                            .RequireAuthenticatedUser()
+                            .Build();
+            });
+      */ 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

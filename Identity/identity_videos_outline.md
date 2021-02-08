@@ -19,7 +19,7 @@ dotnet ef dbcontext scaffold Name=FujiConnection Microsoft.EntityFrameworkCore.S
 dotnet aspnet-codegenerator controller -name FujiUsersController -m FujiUser -dc FujiDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries --force
 ```
 8. Use it: per-user operations – let them eat apples &#9989;
-9. Some simple configuration changes
+9. Some simple configuration changes &#9989;
 10. Authorization policies
     - per method
     - per class

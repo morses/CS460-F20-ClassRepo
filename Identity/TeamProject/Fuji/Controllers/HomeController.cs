@@ -24,7 +24,7 @@ namespace Fuji.Controllers
             _userManager = userManager;
             _fujiDbContext = fujiContext;
         }
-
+        
         public async Task<IActionResult> Index()
         {
             // Information straight from the Controller (does not need to go to the database)
@@ -51,7 +51,7 @@ namespace Fuji.Controllers
             return View(vm);
         }
 
-        [Authorize]
+        
         public IActionResult Privacy()
         {
             return View();
