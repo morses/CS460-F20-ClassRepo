@@ -20,7 +20,7 @@ dotnet aspnet-codegenerator controller -name FujiUsersController -m FujiUser -dc
 ```
 8. Use it: per-user operations – let them eat apples &#9989;
 9. Some simple configuration changes &#9989;
-10. Authorization policies
+10. Authorization policies &#9989;
     - per method
     - per class
     - per application
