@@ -31,5 +31,5 @@ dotnet aspnet-codegenerator controller -name FujiUsersController -m FujiUser -dc
 dotnet ef migrations script --context ApplicationDbContext --output Data\UpdateIdentityAzure.sql
 ```
 12. How to seed users &#9989;
-13. How to seed a super-admin role and account
+13. How to seed an admin role and account, and use it &#9989;
 14. How Identity uses cookies to make this work

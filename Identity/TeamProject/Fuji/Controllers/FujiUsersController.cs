@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Fuji.Controllers
 {
-    //[Authorize(Roles ="admin")]
+    [Authorize(Roles = "admin")]
     public class FujiUsersController : Controller
     {
         private readonly FujiDbContext _context;

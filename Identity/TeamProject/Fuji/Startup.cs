@@ -37,6 +37,7 @@ namespace Fuji
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()                   // enable roles
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             // Customize some settings that Identity uses
             services.Configure<IdentityOptions>(opts => {
@@ -61,12 +62,12 @@ namespace Fuji
             //     "allow unless explicitly authorized" (the default)
             // to
             //     "require authorization unless explicitly allowed for anyone"
-      /*      services.AddAuthorization(opts => {
+            services.AddAuthorization(opts => {
                 opts.FallbackPolicy = new AuthorizationPolicyBuilder()
                             .RequireAuthenticatedUser()
                             .Build();
             });
-      */ 
+      
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

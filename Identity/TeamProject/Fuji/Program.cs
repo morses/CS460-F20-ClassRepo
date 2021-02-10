@@ -33,8 +33,10 @@ namespace Fuji
                     // dotnet user-secrets set SeedUserPW <pw>
 
                     var testUserPw = config["SeedUserPW"];
+                    var adminPw = config["SeedAdminPW"];
 
                     SeedUsers.Initialize(services, SeedData.UserSeedData, testUserPw).Wait();
+                    SeedUsers.InitializeAdmin(services, "admin@example.com", "admin", adminPw, "The", "Admin").Wait();
                 }
                 catch (Exception ex)
                 {
