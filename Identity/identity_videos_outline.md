@@ -25,11 +25,11 @@ dotnet aspnet-codegenerator controller -name FujiUsersController -m FujiUser -dc
     - per class
     - per application
     - "allow all except" or "deny all except" strategies
-11. Deploy it to Azure
+11. Deploy it to Azure &#9989;
 ```
 # Generate sql script to create or update Identity db on Azure
 dotnet ef migrations script --context ApplicationDbContext --output Data\UpdateIdentityAzure.sql
 ```
-12. How to seed users
+12. How to seed users &#9989;
 13. How to seed a super-admin role and account
 14. How Identity uses cookies to make this work

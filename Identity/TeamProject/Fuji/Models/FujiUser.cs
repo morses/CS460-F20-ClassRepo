@@ -18,5 +18,6 @@ namespace Fuji.Models
         public string LastName { get; set; }
 
         public virtual ICollection<ApplesConsumed> ApplesConsumeds { get; set; }
+
     }
 }
