@@ -9,6 +9,7 @@ using Fuji.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Fuji.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace Fuji.Controllers
 {
@@ -49,12 +50,20 @@ namespace Fuji.Controllers
 
             var appleList = _fujiDbContext.Apples.ToList();
             MainPageVM vm = new MainPageVM { TheIdentityUser = user, TheFujiUser = fu, Apples = appleList };
+
+            // Read cookie
+            string cookie = Request.Cookies["Fuji-app"];
+            _logger.LogInformation($"Read cookie: {cookie}");
+
             return View(vm);
         }
 
         
         public IActionResult Privacy()
         {
+            CookieOptions opts = new CookieOptions() { 
+                Expires = new DateTimeOffset(DateTime.Now.AddDays(7)) };
+            Response.Cookies.Append(key: "Fuji-app", value: "9a0s9dfdsals", options: opts );
             return View();
         }
 
