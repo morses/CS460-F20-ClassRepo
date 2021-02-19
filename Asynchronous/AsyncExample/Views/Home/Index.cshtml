@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Asynchonous Programming in C#";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Testing Synchronous vs. Asynchronous Methods</h2>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h4>Select method:</h4>
+        <form>
+            <!-- Radio buttons to select execution method-->
+            <div class="form-check">
+                <input type="radio" name="runType" value="1" id="radioSynchronous" class="form-check-input" checked>
+                <label class="form-check-label" for="radioSynchronous">Synchronous</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="runType" value="2" id="radioAsynchronous" class="form-check-input">
+                <label class="form-check-label" for="radioAsynchronous">Asynchronous</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="runType" value="3" id="radioAsynchronousParallel" class="form-check-input">
+                <label class="form-check-label" for="radioAsynchronousParallel">Asynchronous Parallel</label>
+            </div>
+            <p><button type="submit" class="btn btn-primary" id="submit">Submit</button></p>
+        </form>
+    </div>
+    <div class="col">
+        <div id="loadingAnimation">
+            <img src="@Url.Content("~/Eclipse-1s-200px.gif")" alt="Processing your request, please wait" />
+        </div>
+    </div>
+</div>
+<div class="row results" hidden>
+    <h3 class="text-danger">Request processed in <span id="dt"></span> ms.</h3>
+</div>
+<div class="row results" hidden>
+    <div class="col">
+        <h3 class="title">Recent Earthquakes</h3>
+        <table class="table table-sm">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Magnitude</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Location</th>
+                </tr>
+            </thead>
+            <tbody id="theQuakes">
+                <tr>
+                    <th scope="row">-</th>
+                    <td>time</td>
+                    <td>location</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+    <div class="col">
+        <h3 class="title" style="background: #8a5700">Bitcoin</h3>
+        <div id="bitcoinPlot"></div>
+        <p id="coindeskDisclaimer" style="font-style:italic;"></p>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="~/js/main.js"></script>
+}
