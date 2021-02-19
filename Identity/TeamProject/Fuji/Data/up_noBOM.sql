@@ -1,4 +1,4 @@
-﻿CREATE TABLE [FujiUser] (
+CREATE TABLE [FujiUser] (
   [ID] int PRIMARY KEY IDENTITY(1, 1),
   [ASPNetIdentityId] nvarchar(450),
   [FirstName] nvarchar(50),
