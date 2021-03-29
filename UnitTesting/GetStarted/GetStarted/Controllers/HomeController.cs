@@ -1,4 +1,5 @@
 ﻿using GetStarted.Models;
+using GetStarted.Utility;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -25,7 +26,7 @@ namespace GetStarted.Controllers
 
         public IActionResult Capitalize(string input)
         {
-            string capitalized = char.ToUpper(input[0]) + input.Substring(1);
+            string capitalized = StringUtilities.Capitalize(input);
             return View("Capitalize",capitalized);
         }
 
