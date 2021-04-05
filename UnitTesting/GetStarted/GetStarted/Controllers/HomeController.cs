@@ -24,6 +24,15 @@ namespace GetStarted.Controllers
             return View();
         }
 
+ /*       [HttpPost]
+        public IActionResult Create(Assignment assignment)
+        {
+            if(ModelState.IsValid)
+            {
+
+            }
+        }
+*/
         public IActionResult Capitalize(string input)
         {
             string capitalized = StringUtilities.Capitalize(input);
