@@ -35,5 +35,18 @@ namespace GetStarted.Tests.Tests
             // or
             Assert.That(output, Is.EqualTo("H"));
         }
+
+        [Test]
+        public void Capitalize_EmptyStringReturns_EmptyString()
+        {
+            // Arrange
+            string input = "";
+            // Act
+            string output = StringUtilities.Capitalize(input);
+            // Assert
+            Assert.AreEqual("", output);
+            // or
+            Assert.That(output, Is.EqualTo(""));
+        }
     }
 }

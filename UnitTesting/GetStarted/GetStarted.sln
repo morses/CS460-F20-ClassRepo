@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetStarted", "GetStarted\GetStarted.csproj", "{523DBE47-0CDC-4941-9BBC-0BBC45232C4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetStarted", "GetStarted\GetStarted.csproj", "{523DBE47-0CDC-4941-9BBC-0BBC45232C4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetStarted.Tests", "GetStarted.Tests\GetStarted.Tests.csproj", "{FF28E59E-A64A-486E-AFFE-9632C7A125F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetStarted.Tests", "GetStarted.Tests\GetStarted.Tests.csproj", "{FF28E59E-A64A-486E-AFFE-9632C7A125F2}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "GetStarted.JSTests", "GetStarted.JSTests\GetStarted.JSTests.njsproj", "{466C0EA8-A0F8-4C03-84A3-E42A760DBCE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FF28E59E-A64A-486E-AFFE-9632C7A125F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF28E59E-A64A-486E-AFFE-9632C7A125F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF28E59E-A64A-486E-AFFE-9632C7A125F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{466C0EA8-A0F8-4C03-84A3-E42A760DBCE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466C0EA8-A0F8-4C03-84A3-E42A760DBCE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466C0EA8-A0F8-4C03-84A3-E42A760DBCE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466C0EA8-A0F8-4C03-84A3-E42A760DBCE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
