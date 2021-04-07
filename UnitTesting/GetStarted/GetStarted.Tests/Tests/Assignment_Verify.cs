@@ -15,8 +15,8 @@ namespace GetStarted.Tests.Tests
             // Act
          //   ModelValidator mv = new ModelValidator(a);
             // Assert
-            Assert.That(a.Title,Is.Not.Null);
-            Assert.That(mv.Valid, Is.False);
+            Assert.That(a.Title,Is.Null);
+            //Assert.That(mv.Valid, Is.False);
         }
 
 
