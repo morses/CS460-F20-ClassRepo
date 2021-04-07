@@ -15,8 +15,10 @@ namespace GetStarted.Models
         [Required]
         public string Description { get; set; }
         [Required]
+        [Range(1,5)]
         public int Priority { get; set; }
         [Required]
+        [RegularExpression(@"^[A-Z]{1,4} \d{3}[A-Z]?$",ErrorMessage = "Course string did not match the required format")]
         public string Course { get; set; }
         [Required]
         public DateTime DueDate { get; set; }
