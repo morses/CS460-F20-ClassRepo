@@ -18,13 +18,17 @@ namespace Fuji.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly FujiDbContext _fujiDbContext;
+        //private readonly FujiDbContext _fujiDbContext;
+        private readonly IFujiUserRepository _fuRepo;
+        private readonly IAppleRepository _appleRepo;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, FujiDbContext fujiContext)
+        public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, IFujiUserRepository fuRepo, IAppleRepository appleRepo)
         {
             _logger = logger;
             _userManager = userManager;
-            _fujiDbContext = fujiContext;
+            //_fujiDbContext = fujiContext;
+            _fuRepo = fuRepo;
+            _appleRepo = appleRepo;
         }
         
         public async Task<IActionResult> Index()
@@ -36,10 +40,12 @@ namespace Fuji.Controllers
             FujiUser fu = null;
             if(id != null)
             {
-                fu = _fujiDbContext.FujiUsers.Where(u => u.AspnetIdentityId == id).FirstOrDefault();
+                //fu = _fujiDbContext.FujiUsers.Where(u => u.AspnetIdentityId == id).FirstOrDefault();
+                fu = _fuRepo.GetFujiUserByIdentityId(id);
             }
 
-            var appleList = _fujiDbContext.Apples.ToList();
+            //var appleList = _fujiDbContext.Apples.ToList();
+            var appleList = _appleRepo.GetAll().ToList();
             MainPageVM vm = new MainPageVM { TheIdentityUser = user, TheFujiUser = fu, Apples = appleList };
 
             return View(vm);
