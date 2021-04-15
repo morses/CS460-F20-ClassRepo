@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Fuji.Data;
 using Microsoft.AspNetCore.Http;
+using Fuji.Data.Abstract;
 
 namespace Fuji.Controllers
 {
