@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authorization;
+using Fuji.Data.Abstract;
+using Fuji.Data.Concrete;
 
 namespace Fuji
 {
@@ -35,6 +37,11 @@ namespace Fuji
                 options.UseSqlServer(
                     Configuration.GetConnectionString("FujiConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddScoped<IAppleRepository, AppleRepository>();
+            services.AddScoped<IFujiUserRepository, FujiUserRepository>();
+            //services.AddSingleton<>
+            //services.AddTransient<>
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()                   // enable roles
