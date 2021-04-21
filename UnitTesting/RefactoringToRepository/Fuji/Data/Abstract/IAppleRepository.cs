@@ -8,6 +8,6 @@ namespace Fuji.Data.Abstract
 {
     public interface IAppleRepository : IRepository<Apple>
     {
-        int GetTotalConsumed();
+        int GetTotalConsumed(IQueryable<Apple> apples);
     }
 }
