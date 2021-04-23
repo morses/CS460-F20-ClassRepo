@@ -14,5 +14,6 @@ namespace Fuji.Data.Abstract
         Task EatAsync(FujiUser user, int appleId, DateTime timestamp);
 
         Dictionary<Apple, int> GetCountOfApplesEaten(FujiUser fu);
+        Dictionary<Apple, int> GetCountOfSpecificApplesEaten(IEnumerable<Apple> appleList, FujiUser fu);
     }
 }

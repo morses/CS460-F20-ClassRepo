@@ -58,5 +58,33 @@ namespace Fuji.Data.Concrete
 
             return output;
         }
+
+        public virtual Dictionary<Apple, int> GetCountOfSpecificApplesEaten(IEnumerable<Apple> appleList, FujiUser fu)
+        {
+            if (fu == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            // should have used our FindByIdAsync in IRepository but it's async and I'm in a hurry
+            //FujiUser foundUser = _dbSet.Find(fu.Id);    // would normally need an .Include("ApplesConsumeds") here but we're assuming Lazy Loading is enabled
+            // during the video: Include returns an IQueryable which doesn't have a Find method, so can't use it!
+            FujiUser foundUser = _dbSet.Include("ApplesConsumeds").Where(u => u.Id == fu.Id).FirstOrDefault();
+
+            Dictionary<Apple, int> output = new Dictionary<Apple, int>();
+
+            if (foundUser == null || appleList == null)
+            {
+                return output;
+            }
+
+            foreach (Apple a in appleList)
+            {
+                int count = foundUser.ApplesConsumeds.Where(ac => ac.AppleId == a.Id).Select(ac => ac.Count).Sum();
+                output.Add(a, count);
+            }
+
+            return output;
+        }
     }
 }

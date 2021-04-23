@@ -49,7 +49,7 @@ namespace Fuji.Controllers
             var appleList = _appleRepo.GetAll().ToList();
             MainPageVM vm = new MainPageVM { TheIdentityUser = user, TheFujiUser = fu, Apples = appleList };
 
-            //ViewBag.TotalConsumed = _appleRepo.GetTotalConsumed(_appleRepo.GetAll());
+            ViewBag.TotalConsumed = _appleRepo.GetTotalConsumed(_appleRepo.GetAll());
 
             return View(vm);
         }
