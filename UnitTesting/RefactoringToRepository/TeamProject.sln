@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fuji", "Fuji\Fuji.csproj", "{1FEA7BC5-923E-49A6-9493-13660158812B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fuji.Tests", "Fuji.Tests\Fuji.Tests.csproj", "{F27AC91F-D994-43BD-80EA-B1A46AA5890F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fuji.Tests", "Fuji.Tests\Fuji.Tests.csproj", "{F27AC91F-D994-43BD-80EA-B1A46AA5890F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fuji.BDDTests", "Fuji.BDDTests\Fuji.BDDTests.csproj", "{0ACE14E6-CF49-4466-9591-E38FD2278AAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,18 @@ Global
 		{F27AC91F-D994-43BD-80EA-B1A46AA5890F}.Release|x64.Build.0 = Release|Any CPU
 		{F27AC91F-D994-43BD-80EA-B1A46AA5890F}.Release|x86.ActiveCfg = Release|Any CPU
 		{F27AC91F-D994-43BD-80EA-B1A46AA5890F}.Release|x86.Build.0 = Release|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Debug|x64.Build.0 = Debug|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Debug|x86.Build.0 = Debug|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Release|x64.ActiveCfg = Release|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Release|x64.Build.0 = Release|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Release|x86.ActiveCfg = Release|Any CPU
+		{0ACE14E6-CF49-4466-9591-E38FD2278AAE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
