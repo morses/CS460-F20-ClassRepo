@@ -5,63 +5,63 @@ using TechTalk.SpecFlow;
 namespace Fuji.BDDTests.Steps
 {
     [Binding]
-    public sealed class CalculatorStepDefinitions
+    public sealed class FirstExampleStepDefinitions
     {
-
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
         private readonly ScenarioContext _scenarioContext;
         private readonly Calculator _calculator = new Calculator();
         private int _result;
 
-        public CalculatorStepDefinitions(ScenarioContext scenarioContext)
+        public FirstExampleStepDefinitions(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
         }
 
-        [Given("the first number is (.*)")]
-        public void GivenTheFirstNumberIs(int number)
+        // ---------------- Setup operands ----------------
+        [Given(@"the first number is (.*)")]
+        public void GivenTheFirstNumberIs(int p0)
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _calculator.FirstNumber = number;
-            //_scenarioContext.Pending();
+            _calculator.FirstNumber = p0;
+            _scenarioContext["leftOp"] = p0;
         }
 
-        [Given("the second number is (.*)")]
-        public void GivenTheSecondNumberIs(int number)
+        [Given(@"the second number is (.*)")]
+        public void GivenTheSecondNumberIs(int p0)
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _calculator.SecondNumber = number;
-            //_scenarioContext.Pending();
+            _calculator.SecondNumber = p0;
+            _scenarioContext["rightOp"] = p0;
         }
 
-        [When("the two numbers are added")]
+        // ---------------- Add, subtract and multiply ----------------
+        [When(@"the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
-            //TODO: implement act (action) logic
-
             _result = _calculator.Add();
-            //_scenarioContext.Pending();
+            _scenarioContext["result"] = _calculator.Add((int)_scenarioContext["leftOp"], (int)_scenarioContext["rightOp"]);
         }
 
-        [Then("the result should be (.*)")]
-        public void ThenTheResultShouldBe(int result)
+        [When(@"the two numbers are subtracted")]
+        public void WhenTheTwoNumbersAreSubtracted()
         {
-            //TODO: implement assert (verification) logic
-
-            Assert.That(_result, Is.EqualTo(result));
-
-            //_scenarioContext.Pending();
+            _result = _calculator.Subtract();
+            _scenarioContext["result"] = _calculator.Subtract((int)_scenarioContext["leftOp"], (int)_scenarioContext["rightOp"]);
         }
+
+        [When(@"the two numbers are multiplied")]
+        public void WhenTheTwoNumbersAreMultiplied()
+        {
+            _result = _calculator.Multiply();
+            _scenarioContext["result"] = _calculator.Multiply((int)_scenarioContext["leftOp"], (int)_scenarioContext["rightOp"]);
+        }
+
+        // ---------------- Confirm the result ----------------
+        [Then(@"the result should be (.*)")]
+        public void ThenTheResultShouldBe(int p0)
+        {
+            Assert.That(_result, Is.EqualTo(p0));
+            Assert.That(_scenarioContext["result"], Is.EqualTo(p0));
+        }
+
     }
 }
