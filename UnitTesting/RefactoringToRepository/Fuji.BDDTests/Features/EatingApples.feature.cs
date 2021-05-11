@@ -119,25 +119,19 @@ by one.", ProgrammingLanguage.CSharp, ((string[])(null)));
  testRunner.Given("the following users exist", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "UserName",
-                        "Email",
-                        "FirstName",
-                        "LastName",
-                        "Password"});
+                        "VarietyName",
+                        "ScientificName"});
             table2.AddRow(new string[] {
-                        "AndreC",
-                        "colea@example.com",
-                        "Andre",
-                        "Cole",
-                        "0a9dfi3.a"});
+                        "Fuji",
+                        "Malus pumila"});
             table2.AddRow(new string[] {
-                        "JoannaV",
-                        "valdezJ@example.com",
-                        "Joanna",
-                        "Valdez",
-                        "d9u(*dsF4"});
+                        "Braeburn",
+                        "Malus domestica"});
+            table2.AddRow(new string[] {
+                        "Gala",
+                        "Malus domestica"});
 #line 19
- testRunner.And("the following users do not exist", ((string)(null)), table2, "And ");
+ testRunner.And("the following apples exist", ((string)(null)), table2, "And ");
 #line hidden
         }
         
@@ -148,7 +142,7 @@ by one.", ProgrammingLanguage.CSharp, ((string[])(null)));
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User can see apple varieties", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 34
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -171,16 +165,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
 this.FeatureBackground();
 #line hidden
-#line 35
+#line 36
  testRunner.Given("I am a user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 36
+#line 37
  testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 38
    testRunner.And("I am on the \'Home\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 39
  testRunner.Then("I can see all the apples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -194,7 +188,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User can record eating an apple", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 40
+#line 41
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -217,19 +211,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
 this.FeatureBackground();
 #line hidden
-#line 41
+#line 42
  testRunner.Given("I am a user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 42
+#line 43
    testRunner.And("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 44
    testRunner.And("I am on the \'Home\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 44
+#line 45
  testRunner.When("I record eating an apple", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 45
+#line 46
  testRunner.Then("I see the count of that apple has increased by 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -29,6 +29,8 @@ namespace Fuji.BDDTests.Hooks
         {
             FirefoxOptions options = new FirefoxOptions();
             options.AcceptInsecureCertificates = true;
+            // This version of the constructor was needed if using the SpecFlow+ testrunner rather than NUnit test runner
+            // I'm not sure why but I needed to tell it where the geckodriver folder was or it wouldn't run
             //FirefoxDriver driver = new FirefoxDriver("C:\\Users\\morses", options);
             FirefoxDriver driver = new FirefoxDriver(options);
 
