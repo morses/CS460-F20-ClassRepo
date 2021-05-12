@@ -28,12 +28,58 @@
     </div>
 }
 
-@*
-    Move our button listeners and ajax code to a separate javascript file that we
-    can load on this page only.  Site.js isn't the best location for it since that
-    is loaded on every page by default.
-*@
+<div class="row">
+    <div class="col">
+        <h2>Want to receive our newsletter?</h2>
+        <form id="newsletter">
+            <div class="form-group">
+                <label for="email">Enter your email address:</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <div class="alert alert-success" id="subscribe-alert" style="display: none">
+            Thank you!  You'll begin receiving our newsletter soon.
+            <button type="button" class="close" data-hide="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <script type="text/javascript" src="~/js/eatApples.js"></script>
+    @*Just putting this here for convenience in the demo*@
+    <script type="text/javascript">
+        function showNewsletterMessage(data) {
+            
+            if (Array.isArray(data) && data.length) {
+                console.log(data);
+                // finish code here to tell them they're already subscribed
+            }
+            else {
+                $('#subscribe-alert').show();
+            }
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            $.ajax({
+                url: '/API/IsOnMailingList',
+                data: { email: document.getElementById("email").value },
+                method: 'GET',
+                success: showNewsletterMessage
+            });
+        }
+
+        // http://jsfiddle.net/cQNFL/21/
+        $(function () {
+            $("[data-hide]").on("click", function () {
+                $("." + $(this).attr("data-hide")).hide();
+            });
+        });
+
+        document.getElementById('newsletter').addEventListener('submit', subscribeNewsletter);
+    </script>
 }
