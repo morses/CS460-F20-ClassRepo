@@ -49,9 +49,9 @@ namespace Fuji.Controllers
         /// 'Perfectly reasonable' helper method to run a query on a db, gather all results
         /// and serialize to JSON
         /// </summary>
-        /// <param name="q">SQL to execute</param>
+        /// <param name="q">SQL to execute, i.e. "SELECT * FROM Apples"</param>
         /// <param name="db">DbContext to use</param>
-        /// <returns></returns>
+        /// <returns>Results of query as a serialized JSON object</returns>
         private async Task<string> RunQueryJSON(string q, DbContext db)
         {
             // One way to execute "raw" sql through entity framework core, aka ADO.NET

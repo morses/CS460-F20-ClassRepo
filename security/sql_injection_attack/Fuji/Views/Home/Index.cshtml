@@ -34,7 +34,7 @@
         <form id="newsletter">
             <div class="form-group">
                 <label for="email">Enter your email address:</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <button type="submit" class="btn btn-primary">Subscribe</button>
@@ -53,16 +53,18 @@
     @*Just putting this here for convenience in the demo*@
     <script type="text/javascript">
         function showNewsletterMessage(data) {
-            
+            // If their email is already in the database then we can tell them they're already subscribed
             if (Array.isArray(data) && data.length) {
                 console.log(data);
                 // finish code here to tell them they're already subscribed
             }
             else {
+                // Thank them
                 $('#subscribe-alert').show();
             }
         }
 
+        // AJAX call to send email in to subscribe to newletter
         function subscribeNewsletter(event) {
             event.preventDefault();
             $.ajax({
@@ -73,7 +75,7 @@
             });
         }
 
-        // http://jsfiddle.net/cQNFL/21/
+        // helper to dismiss the bootstrap alert http://jsfiddle.net/cQNFL/21/
         $(function () {
             $("[data-hide]").on("click", function () {
                 $("." + $(this).attr("data-hide")).hide();

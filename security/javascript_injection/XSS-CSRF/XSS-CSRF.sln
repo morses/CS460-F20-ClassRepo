@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSS-CSRF", "XSS-CSRF.csproj", "{3F1FBF19-08BF-4E72-81C9-68B01A855813}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F1FBF19-08BF-4E72-81C9-68B01A855813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1FBF19-08BF-4E72-81C9-68B01A855813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1FBF19-08BF-4E72-81C9-68B01A855813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1FBF19-08BF-4E72-81C9-68B01A855813}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A89AB63-7D68-4588-8880-498A099AEE79}
+	EndGlobalSection
+EndGlobal
