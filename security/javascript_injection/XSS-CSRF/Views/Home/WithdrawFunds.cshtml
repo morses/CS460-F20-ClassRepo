@@ -1,0 +1,22 @@
+﻿
+@*Normally we'd have this behind a login and demo that by already having the user logged in, but
+    for simplicity just assume it is so.  *@
+<div class="row">
+    <div class="col">
+        <h1>Withdraw Funds</h1>
+
+        <form asp-controller="Home" asp-action="WithdrawFunds" method="post">
+            @*Needed for ASP.NET MVC 5 and earlier.  Not needed by default in .NET Core MVC
+        @Html.AntiForgeryToken()  *@
+            <div class="form-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" class="form-control" id="accountNumber" name="accountNumber">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount to Withdraw</label>
+                <input type="number" class="form-control" id="amount" name="amount">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

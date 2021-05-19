@@ -44,6 +44,20 @@ namespace XSS_CSRF.Controllers
             return capitalized;
         }
 
+        [HttpGet]
+        public IActionResult WithdrawFunds()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult WithdrawFunds(int? amount, string accountNumber)
+        {
+            ViewBag.Message = "Withdrawl successful!";
+            return RedirectToAction("Index","Home");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
