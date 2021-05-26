@@ -123,7 +123,7 @@ namespace Fuji.Tests
             // Act
             Apple[] apples = new Apple[] {
                 new Apple {Id = 1, VarietyName = "MacBook", ScientificName = "Galus Indictus"},
-                //new Apple {Id = 2, VarietyName = "iPhone", ScientificName = "Poculum Relego" },
+                new Apple {Id = 2, VarietyName = "iPhone", ScientificName = "Poculum Relego" },
                 new Apple {Id = 3, VarietyName = "iWatch", ScientificName = "Inflo Fugitivus"}
             };
             Dictionary<Apple, int> result = fujiUserRepo.GetCountOfSpecificApplesEaten(apples, new FujiUser { Id = 2 });
